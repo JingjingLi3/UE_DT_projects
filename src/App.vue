@@ -1,26 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="hello">
+    <div style="width:970px;height:300px;margin:auto">
+      <LivePlayer :videoUrl= "url" fluent autoplay="true" live stretch="true"></LivePlayer>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LivePlayer from '@liveqing/liveplayer-v3'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    LivePlayer
+  },
+  data() {
+    return{
+      url: ''
+      // url: 'https://docs.unrealengine.com/4.27/Attachments/WorkingWithMedia/IntegratingMedia/MediaFramework/HowTo/StreamMediaSource/Infiltrator%20Demo.mp4'
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  padding: 0;
+  margin: 0;
 }
 </style>
